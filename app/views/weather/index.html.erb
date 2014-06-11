@@ -1,3 +1,21 @@
-<h1>Weather#index</h1>
+<h1>Weather Search App</h1>
 <p>Find me in app/views/weather/index.html.erb</p>
+
+<%= form_for("weather/index", method: "post") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @response.nil? %>
+
+<p> Enter Info </p>
+
+<% else %>
+
 <%= @response.body %>
+
+<% end %>
+
+
+
